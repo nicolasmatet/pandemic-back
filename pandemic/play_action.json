@@ -1,0 +1,9 @@
+{
+  "action_type": "move | move_with_card | teleport | heal | cure | take_from_player | give_to_player | draw | infect | take_from_dump | dump | move_other | built | build_without_card | give_to_player_anywhere | play_event",
+  "move_to": "location_out",
+  "move_play": "player",
+  "take_from_player": "player",
+  "give_to_player": "player",
+  "card": "card",
+  "event"
+}

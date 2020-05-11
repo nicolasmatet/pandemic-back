@@ -1,0 +1,14 @@
+{
+"player_positions":{"player":"position"},
+"players_cards":{"player":["cards"]},
+"diseases_count":{"location":"disease_count"}
+"dumped_cards":["card"]
+"dumped_infections":["location"]
+"research_centers":["location"]
+"healed_diseases":["disease"]
+"eradicated_diseases":["disease"]
+"outbreaks_count":"number"
+"infection_progress":"number"
+"remaining_diseases":{"disease":"number"}
+
+}

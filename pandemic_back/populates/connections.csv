@@ -1,0 +1,182 @@
+New York,Madrid
+New York,Washington
+New York,Montréal
+New York,Londres
+Washington,New York
+Washington,Montréal
+Washington,Atlanta
+Washington,Miami
+Chicago,Atlanta
+Chicago,Montréal
+Chicago,Mexico
+Chicago,San Francisco
+Chicago,Los Angeles
+San Francisco,Los Angeles
+San Francisco,Manille
+San Francisco,Tokyo
+San Francisco,Chicago
+Atlanta,Miami
+Atlanta,Washington
+Atlanta,Chicago
+Paris,Madrid
+Paris,Londres
+Paris,Essen
+Paris,Milan
+Paris,Alger
+Londres,Essen
+Londres,Paris
+Londres,New York
+Londres,Madrid
+Milan,Paris
+Milan,Istanbul
+Milan,Essen
+Essen,Milan
+Essen,Londres
+Essen,Paris
+Essen,Saint Pétersbourg
+Madrid,Paris
+Madrid,Alger
+Madrid,New York
+Madrid,Sao Paulo
+Madrid,Londres
+Saint Pétersbourg,Moscou
+Saint Pétersbourg,Istanbul
+Saint Pétersbourg,Essen
+Montréal,Washington
+Montréal,New York
+Montréal,Chicago
+Los Angeles,San Francisco
+Los Angeles,Sydney
+Los Angeles,Mexico
+Los Angeles,Chicago
+Miami,Atlanta
+Miami,Washington
+Miami,Bogota
+Miami,Mexico
+Mexico,Lima
+Mexico,Bogota
+Mexico,Los Angeles
+Mexico,Chicago
+Mexico,Miami
+Bogota,Lima
+Bogota,Buenos Aires
+Bogota,Miami
+Bogota,Mexico
+Bogota,Sao Paulo
+Lima,Santiago
+Lima,Bogota
+Lima,Mexico
+Santiago,Lima
+Buenos Aires,Bogota
+Buenos Aires,Sao Paulo
+Sao Paulo,Buenos Aires
+Sao Paulo,Lagos
+Sao Paulo,Bogota
+Sao Paulo,Madrid
+Kinshasa,Lagos
+Kinshasa,Johannesburg
+Kinshasa,Kartoum
+Kartoum,Lagos
+Kartoum,Johannesburg
+Kartoum,Kinshasa
+Kartoum,Le Caire
+Johannesburg,Kinshasa
+Johannesburg,Kartoum
+Lagos,Kinshasa
+Lagos,Kartoum
+Lagos,Sao Paulo
+Alger,Madrid
+Alger,Paris
+Alger,Istanbul
+Alger,Le Caire
+Le Caire,Alger
+Le Caire,Riyad
+Le Caire,Kartoum
+Le Caire,Baghdad
+Le Caire,Istanbul
+Baghdad,Istanbul
+Baghdad,Le Caire
+Baghdad,Riyad
+Baghdad,Téhéran
+Baghdad,Karachi
+Riyad,Baghdad
+Riyad,Le Caire
+Riyad,Karachi
+Istanbul,Alger
+Istanbul,Le Caire
+Istanbul,Baghdad
+Istanbul,Moscou
+Istanbul,Saint Pétersbourg
+Istanbul,Milan
+Téhéran,Moscou
+Téhéran,Baghdad
+Téhéran,Karachi
+Téhéran,Delhi
+Moscou,Saint Pétersbourg
+Moscou,Istanbul
+Moscou,Téhéran
+Bombay,Delhi
+Bombay,Karachi
+Bombay,Chennai
+Delhi,Calcutta
+Delhi,Bombay
+Delhi,Karachi
+Delhi,Téhéran
+Delhi,Chennai
+Calcutta,Delhi
+Calcutta,Chennai
+Calcutta,Hong Kong
+Calcutta,Bangkok
+Karachi,Téhéran
+Karachi,Riyad
+Karachi,Bombay
+Karachi,Delhi
+Karachi,Baghdad
+Chennai,Bombay
+Chennai,Calcutta
+Chennai,Bangkok
+Chennai,Jakarta
+Bangkok,Jakarta
+Bangkok,Calcutta
+Bangkok,Hong Kong
+Bangkok,Chennai
+Ho Chi Minh,Jakarta
+Ho Chi Minh,Manille
+Ho Chi Minh,Hong Kong
+Jakarta,Chennai
+Jakarta,Bangkok
+Jakarta,Ho Chi Minh
+Jakarta,Sydney
+Taiwan,Hong Kong
+Taiwan,Manille
+Taiwan,Osaka
+Taiwan,Shanghaï
+Sydney,Los Angeles
+Sydney,Manille
+Sydney,Jakarta
+Tokyo,San Francisco
+Tokyo,Osaka
+Tokyo,Séoul
+Osaka,Tokyo
+Osaka,Taiwan
+Pékin,Séoul
+Pékin,Shanghaï
+Shanghaï,Séoul
+Shanghaï,Tokyo
+Shanghaï,Taiwan
+Shanghaï,Hong Kong
+Shanghaï,Pékin
+Hong Kong,Shanghaï
+Hong Kong,Manille
+Hong Kong,Ho Chi Minh
+Hong Kong,Bangkok
+Hong Kong,Calcutta
+Hong Kong,Taiwan
+Séoul,Tokyo
+Séoul,Shanghaï
+Séoul,Pékin
+Manille,Sydney
+Manille,San Francisco
+Manille,Taiwan
+Manille,Hong Kong
+Manille,Ho Chi Minh
