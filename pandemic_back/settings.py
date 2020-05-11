@@ -23,14 +23,6 @@ SECRET_KEY = ')ewa#=6np5pwngde#eoa27j32)-0(xo5g$75=s=e#g$c20rs)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-HOST = "127.0.0.1"
-
-ALLOWED_HOSTS = ["localhost", "192.168.1.90"]
-
-# CORS_ORIGIN_WHITELIST = [
-#     'http://localhost:4200'
-# ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ORIGIN = True
 
@@ -40,7 +32,9 @@ CORS_ALLOW_HEADERS = [
     'observe'
 ]
 
-# ALLOWED_HOSTS = ['localhost', 'fec-leaf.com', 'dev.algonomia.com']
+ALLOWED_HOSTS = ['localhost',
+                 '0.0.0.0',
+                 'pandemics.herokuapp.com']
 
 # Application definition
 
@@ -60,11 +54,7 @@ ASGI_APPLICATION = 'pandemic_back.routing.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-            'capacity': 500,
-            'expiry': 10,
-        },
+        'LOCATION': os.environ.get('REDIS_URL')
     },
 }
 
