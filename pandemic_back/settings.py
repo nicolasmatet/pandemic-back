@@ -34,6 +34,7 @@ CORS_ALLOW_HEADERS = [
 
 ALLOWED_HOSTS = ['localhost',
                  '0.0.0.0',
+                 'pandemics-back.herokuapp.com',
                  'pandemics.herokuapp.com']
 
 # Application definition
