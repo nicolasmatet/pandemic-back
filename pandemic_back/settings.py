@@ -97,11 +97,6 @@ WSGI_APPLICATION = 'pandemic_back.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DB_HOST = os.environ.get('DATABASE_URL:', 'localhost')
-DB_PORT = os.environ.get('DB_PORT', 3306)
-DB_NAME = os.environ.get('DB_NAME', 'preprod')
-DB_USER = os.environ.get('DB_USER', 'root')
-DB_PSWD = os.environ.get('DB_PSWD', 'rootAsse42!')
 
 DATABASES = {
     'dev': {
@@ -109,7 +104,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-DATABASES['default'] = dj_database_url.config(conn_max_age=0, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

@@ -1,5 +1,5 @@
-django
-channels
+django==3.0.6
+channels==2.4.0
 channels_redis
 networkx
 websocket_client
