@@ -3,4 +3,4 @@ channels
 channels_redis
 networkx
 websocket_client
-gunicorn
+daphne

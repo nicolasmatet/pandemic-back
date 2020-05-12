@@ -1,1 +1,1 @@
-web: gunicorn pandemic_back.wsgi
+web: daphne pandemic_back.asgi:application
