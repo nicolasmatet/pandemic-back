@@ -4,3 +4,5 @@ channels_redis
 networkx
 websocket_client
 daphne
+psycopg2-binary
+dj-database-url
