@@ -55,7 +55,9 @@ ASGI_APPLICATION = 'pandemic_back.routing.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'LOCATION': os.environ.get('REDIS_URL')
+        "CONFIG": {
+            "hosts": [(os.environ.get('REDIS_URL'), 6379)]
+        }
     },
 }
 
