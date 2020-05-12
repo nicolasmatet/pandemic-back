@@ -9,37 +9,37 @@ class Error(Exception):
 
 class PlayerAlreadyExists(Error):
     def __init__(self):
-        Error.__init__(self, 'Player already exists !')
+        Error.__init__(self, 'Le joueur existe déjà !')
 
 
 class TooManyPlayers(Error):
     def __init__(self):
-        Error.__init__(self, 'Too many players in this room (max. 4)')
+        Error.__init__(self, 'Trop de joueurs dans cette salle (max. 4)')
 
 
 class PlayerIsTaken(Error):
     def __init__(self):
-        Error.__init__(self, 'Player is already taken !')
+        Error.__init__(self, 'Le joueur est déjà pris !')
 
 
 class ResearchCenterAlreadyPresent(Error):
     def __init__(self):
-        Error.__init__(self, 'A research center is already build here.')
+        Error.__init__(self, 'Un centre de recherche a déjà été construit ici.')
 
 
 class ResearchCenterLimit(Error):
     def __init__(self):
-        Error.__init__(self, 'Too many research centers (max. 6). You may destroy any for free.')
+        Error.__init__(self, 'Trop de centres de recherche (max. 6)! Vous devez en détruire un.')
 
 
 class NoResearchCenterPresent(Error):
     def __init__(self):
-        Error.__init__(self, 'No research center here.')
+        Error.__init__(self, 'Pas de centre de recherche ici.')
 
 
 class NoDiseaseToCure(Error):
     def __init__(self):
-        Error.__init__(self, 'No disease of this type to cure.')
+        Error.__init__(self, 'Pas de maladie de ce type à soigner.')
 
 
 class NoDisease(Error):
@@ -49,92 +49,92 @@ class NoDisease(Error):
 
 class DiseaseAlreadyCured(Error):
     def __init__(self):
-        Error.__init__(self, 'Disease is already cured.')
+        Error.__init__(self, 'Un remède à déjà été trouvé.')
 
 
 class LocationCardsNotMatching(Error):
     def __init__(self):
-        Error.__init__(self, 'You need 5 locations cards of the same type.')
+        Error.__init__(self, 'Il vous faut 5 cartes villes du même type.')
 
 
 class LocationCardsAreMissing(Error):
     def __init__(self):
-        Error.__init__(self, 'You need 5 locations cards of the same type.')
+        Error.__init__(self, 'Il vous faut 5 cartes villes du même type.')
 
 
 class NeedAResarchCenter(Error):
     def __init__(self):
-        Error.__init__(self, 'You need a research center at origin and destination.')
+        Error.__init__(self, 'Il faut un centre de recherche au départ et à l\'arrivée.')
 
 
 class NotANeighbor(Error):
     def __init__(self):
-        Error.__init__(self, 'You can only move to a neighbor.')
+        Error.__init__(self, 'Pas de connection vers cette ville !')
 
 
 class NeedCurrentLocationCard(Error):
     def __init__(self):
-        Error.__init__(self, 'You need a card of the current location for this action.')
+        Error.__init__(self, 'Il vous manque la carte de la ville actuelle !')
 
 
 class NeedLocationCard(Error):
     def __init__(self):
-        Error.__init__(self, 'You need to dump a location card for this action.')
+        Error.__init__(self, 'Vous devez sélectionner une carte ville pour cette action.')
 
 
 class RequireAction(Error):
     def __init__(self):
-        Error.__init__(self, "You have spend all action points")
+        Error.__init__(self, "Vous avez utilisé tous vos points d'action")
 
 
 class CannotMoveOthers(Error):
     def __init__(self):
-        Error.__init__(self, "You cannot move other players")
+        Error.__init__(self, "Vous ne pouvez pas déplacer un autre joueur.")
 
 
 class NotYourTurn(Error):
     def __init__(self):
-        Error.__init__(self, "You need to wait your turn")
+        Error.__init__(self, "Ce n'est pas votre tour !")
 
 
 class PlayerHasNoRole(Error):
     def __init__(self):
-        Error.__init__(self, "You must first choose a role")
+        Error.__init__(self, "Vous devez choisir un rôle !")
 
 
 class RoleAlreadyTaken(Error):
     def __init__(self):
-        Error.__init__(self, "Role is already taken")
+        Error.__init__(self, "Ce rôle est déjà pris.")
 
 
 class RoleDoesNotExists(Error):
     def __init__(self):
-        Error.__init__(self, "Role does not exists")
+        Error.__init__(self, "Ce rôle n'existe pas...")
 
 
 class PlayerUnready(Error):
     def __init__(self):
-        Error.__init__(self, "A player is not ready")
+        Error.__init__(self, "Un joueur n'est pas encore prêt !")
 
 
 class GameHasStarted(Error):
     def __init__(self):
-        Error.__init__(self, "Game has Already Started")
+        Error.__init__(self, "La partie a déjà commencée !")
 
 
 class GameHasNotStarted(Error):
     def __init__(self):
-        Error.__init__(self, "Game has not begun ! All players must be ready.")
+        Error.__init__(self, "La partie n'a pas commencée ! Tous les joueurs doivent être prêts.")
 
 
 class Defeat(Error):
     def __init__(self):
-        Error.__init__(self, "THE PANDEMIC HAS WON !")
+        Error.__init__(self, "LA PANDEMIE A GAGNÉ !")
 
 
 class Victory(Error):
     def __init__(self):
-        Error.__init__(self, "THE PANDEMIC WAS DEFEATED !")
+        Error.__init__(self, "LA PANDÉMIE A ÉTÉ VAICUE !")
 
 
 class ActionRemainig(Error):
