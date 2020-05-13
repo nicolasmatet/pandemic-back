@@ -19,9 +19,10 @@ def solve_epidemic(game_state):
 
 
 def shuffle_infection_dump(game_state):
-    random.shuffle(game_state.infection_dump)
-    game_state.infection_deck.extend(game_state.infection_dump)
-    game_state.infection_dump = []
+    if game_state.infection_dump:
+        random.shuffle(game_state.infection_dump)
+        game_state.infection_deck.extend(game_state.infection_dump)
+        game_state.infection_dump = []
 
 
 def infections(game_state):

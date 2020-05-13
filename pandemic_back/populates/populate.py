@@ -2,6 +2,7 @@ import csv
 
 from pandemic.models.cards_location import CardType, CardEvent
 from pandemic.models.maplocation import LocationType
+from django.db import migrations
 
 
 def load_locations(apps, schema_editor):
@@ -17,6 +18,7 @@ def load_locations(apps, schema_editor):
             all_locations.append(
                 MapLocation(name=name, map=default_map, location_type=LocationType.__members__[loc_type].value,
                             x=float(x), y=float(y), population=population))
+    MapLocation.objects.filter(map=default_map).delete()
     MapLocation.objects.bulk_create(all_locations)
 
 
@@ -55,4 +57,5 @@ def load_cards_locations_deck(apps, schema_editor):
     for name in CardEvent:
         all_deck.append(Deck(name=name.value, location=None, type=CardType.event.value))
     all_deck.append(Deck(name='épidémie', location=None, type=CardType.epidemic.value))
+    Deck.objects.all().delete()
     Deck.objects.bulk_create(all_deck)

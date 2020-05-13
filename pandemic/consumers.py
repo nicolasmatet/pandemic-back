@@ -364,11 +364,12 @@ class PlayConsumer(WebsocketConsumer):
 
         try:
             self.check_secret(secret)
-            AllGames.set_next_infections(playroom, self.player, cards)
+            dict_change = AllGames.set_next_infections(playroom, self.player, cards)
             self.send_message_to_group('cardList', {
                 "type": "infections",
                 "cards": cards,
             }, playername=None)
+            self.send_message_to_group('game_state', json.dumps(dict_change))
         except Error as e:
             self.send_message_to_socket('error', str(e))
         except AttributeError as e:

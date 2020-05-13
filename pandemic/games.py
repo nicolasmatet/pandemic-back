@@ -168,7 +168,7 @@ class AllGames:
         game = cls.get_game(playroom)
         if not game:
             raise errors.GameHasNotStarted
-        game.set_next_infections(player, cards)
+        return game.set_next_infections(player, cards)
 
     @classmethod
     def cancel_last_action(cls, playroom, player):
@@ -236,8 +236,8 @@ class Game:
 
     @GameTools.backup_point
     def set_next_infections(self, player, cards):
-        self.game_state.set_next_infections(player, cards)
         self.actions = []
+        return self.game_state.set_next_infections(player, cards)
 
     def apply_action(self, player, game_action):
         dict_game_state_changes = game_action.apply_to_game_state(get_player_id(player), self.game_state)
@@ -365,6 +365,7 @@ class GameState:
         else:
             self.phase = self.phase_on_hold
             self.phase_on_hold = None
+        return self.phase
 
     @GameStateTools.check_endgame
     @GameStateTools.require_current_player
@@ -410,6 +411,9 @@ class GameState:
         if need_card:
             game.cards.use_card(self, player, CardEvent.prevision.value)
             self.check_dump_phase()
+        if self.phase == PlayPhases.solve_epidemic.value:
+            game.infections.shuffle_infection_dump(self)
+
         next_infections = self.infection_deck[-n:]
         next_infections.reverse()
         return next_infections
@@ -424,6 +428,7 @@ class GameState:
             if not card in set_top_deck:
                 raise errors.InvalidCard
         self.infection_deck[-len(cards):] = cards[::-1]
+        return self.serialize_fields(Game.events(Game.dump_location_event, Game.infection_event))
 
     def play_nuit_tranquille(self, player):
         game.cards.use_card(self, player, CardEvent.nuit.value)
@@ -450,15 +455,19 @@ class GameState:
             game.cards.dump_card(self, player, card)
             if not game.cards.player_hand_limit(self, player):
                 break
-        self.check_dump_phase()
-        return self.serialize_fields(Game.dump_location_event)
+        new_phase = self.check_dump_phase()
+        dict_change = self.serialize_fields(Game.dump_location_event)
+        if new_phase == PlayPhases.end_turn.value:
+            dict_end_turn = self.end_turn(player)
+            dict_change.update(dict_end_turn)
+        return dict_change
 
     def check_dump_phase(self):
         if self.phase == PlayPhases.dump_card.value:
             if game.cards.any_player_hand_limit(self):
                 self.phase = PlayPhases.dump_card.value
             else:
-                self.resume_phase()
+                return self.resume_phase()
 
     @GameStateTools.check_endgame
     @GameStateTools.require_current_player

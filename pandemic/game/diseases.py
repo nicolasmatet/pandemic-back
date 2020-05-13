@@ -92,7 +92,7 @@ def get_disease_to_heal(game_state, location):
 def get_number_of_disease_to_heal(game_state, player, location, disease_type):
     if players.is_medecin(game_state, player):
         return game_state.locations_disease_count[location][disease_type]
-    if game_state.disease_status[disease_type] == DiseaseStatusEnum.cured.value:
+    if disease_is_cured(game_state, disease_type):
         return game_state.locations_disease_count[location][disease_type]
     return 1
 
