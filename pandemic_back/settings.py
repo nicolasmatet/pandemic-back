@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')ewa#=6np5pwngde#eoa27j32)-0(xo5g$75=s=e#g$c20rs)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ORIGIN = True
 
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'pandemic_back.wsgi.application'
 
 
 DATABASES = {
-    'dev': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }

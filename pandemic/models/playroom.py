@@ -30,3 +30,4 @@ class PlayRoom(models.Model):
     def get_infections_number(self):
         infections = [2, 2, 3, 3, 3, 4, 4]
         return infections[self.epidemics]
+
