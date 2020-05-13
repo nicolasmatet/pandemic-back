@@ -20,6 +20,7 @@ def cure_disease(game_state, player, cards):
             raise errors.LocationCardsNotMatching
     game.cards.use_cards(game_state, player, cards)
     game_state.disease_status[disease_type] = DiseaseStatusEnum.cured.value
+    check_all_diseases_cured(game_state)
     if players.is_medecin(game_state, player):
         auto_cure_diseases(game_state, players.get_player_location(game_state, player))
 
@@ -48,12 +49,12 @@ def remove_disease_from_location(game_state, location, disease_type, number_to_h
 
 def eradicate_disease(game_state, disease_type):
     game_state.disease_status[disease_type] = DiseaseStatusEnum.eradicated.value
-    check_all_diseases_eradicated(game_state)
+    check_all_diseases_cured(game_state)
 
 
-def check_all_diseases_eradicated(game_state):
+def check_all_diseases_cured(game_state):
     for status in game_state.disease_status.items():
-        if status != DiseaseStatusEnum.eradicated.value:
+        if not (status == DiseaseStatusEnum.cured.value or status == DiseaseStatusEnum.cured.value):
             return False
     endgame.victory(game_state)
 
