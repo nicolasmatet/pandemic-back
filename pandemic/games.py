@@ -392,8 +392,8 @@ class GameState:
     def pont_aerien(self, player, moving_player, location):
         game.cards.use_card(self, player, CardEvent.pont.value)
         dict_changes = self._do_move(moving_player, location)
-        dict_change_hand = self.serialize_fields(Game.dump_location_event)
         self.check_dump_phase()
+        dict_change_hand = self.serialize_fields(Game.dump_location_event)
         dict_changes.update(dict_change_hand)
         return dict_changes
 
@@ -409,6 +409,7 @@ class GameState:
     def get_next_infections(self, player, n, need_card):
         if need_card:
             game.cards.use_card(self, player, CardEvent.prevision.value)
+            self.check_dump_phase()
         next_infections = self.infection_deck[-n:]
         next_infections.reverse()
         return next_infections
@@ -466,7 +467,9 @@ class GameState:
     def move_to_location(self, player, to_location, card_to_use):
         game.cards.use_card(self, player, card_to_use)
         game.players.set_player_location(self, player, to_location)
-        return self.serialize_fields(Game.events(Game.dump_location_event, Game.move_event))
+        dict_change = self._do_move(player, to_location)
+        dict_change.update(self.serialize_fields(Game.dump_location_event))
+        return dict_change
 
     @GameStateTools.require_role(PlayerRolesEnum.expert.value)
     def move_to_locationexpert(self, player, to_location, card_to_use):
@@ -479,8 +482,9 @@ class GameState:
     def move_from_location(self, player, to_location):
         player_location = game.players.get_player_location(self, player)
         game.cards.use_card(self, player, player_location)
-        game.players.set_player_location(self, player, to_location)
-        return self.serialize_fields(Game.events(Game.dump_location_event, Game.move_event))
+        dict_change = self._do_move(player, to_location)
+        dict_change.update(self.serialize_fields(Game.dump_location_event))
+        return dict_change
 
     @GameStateTools.require_current_player
     @GameStateTools.require_action

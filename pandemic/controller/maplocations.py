@@ -165,7 +165,7 @@ def get_disease_status(playroom) -> Dict[str, int]:
     disease_status = defaultdict(lambda: DiseaseStatusEnum.ongoing.value)
     diseases = DiseaseStatus.objects.filter(playroom=playroom)
     for disease in diseases:
-        disease_status[diseases.disease_type] = disease.disease_status
+        disease_status[disease.disease_type] = disease.disease_status
     return disease_status
 
 
