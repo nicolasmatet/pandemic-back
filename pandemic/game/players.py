@@ -41,8 +41,10 @@ def next_player(game_state):
     return game_state.players[(idx_player + 1) % len(game_state.players)]
 
 
-def get_specialist_location(game_state):
+
+def get_role_location(game_state, role):
     for player, location in game_state.player_locations.items():
-        if is_role(game_state, player, PlayerRolesEnum.specialiste.value):
+        if is_role(game_state, player, role):
             return location
     return None
+
